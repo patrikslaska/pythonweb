@@ -23,12 +23,12 @@ def get_content():
 
 
 def init_pw():
-    with f as open('password'):
+    with open('password') as f:
         db_password = f.read()
 
 
 def init_hostname():
-    with f as open('hostname'):
+    with open('hostname') as f:
         db_hostname = f.read()
 
 
