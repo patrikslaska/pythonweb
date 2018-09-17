@@ -1,3 +1,3 @@
 Flask
 boto
-MySQL-python
+mysql-connector
