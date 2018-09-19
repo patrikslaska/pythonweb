@@ -1,5 +1,6 @@
 from flask import Flask
 import mysql.connector
+import os
 
 db_hostname = ''
 db_user = 'webapp'
@@ -26,14 +27,12 @@ def get_content():
 
 def init_pw():
     global db_password
-    with open('password') as f:
-        db_password = f.read().strip()
+    db_password = os.environ['DB_PASSWORD']
 
 
 def init_hostname():
     global db_hostname
-    with open('hostname') as f:
-        db_hostname = f.read().strip()
+    db_hostname = os.environ['DB_HOSTNAME']
 
 
 def init_db():
