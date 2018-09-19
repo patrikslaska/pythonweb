@@ -36,7 +36,7 @@ def init_hostname():
 
 def init_db():
     init_tables = 'CREATE TABLE IF NOT EXISTS pages (id int(3) NOT NULL, description varchar(45), PRIMARY KEY(id))'
-    add_page1 = 'INSERT INTO pages(id,description) VALUES (1,"Hello World from the DB!")'
+    add_page1 = 'INSERT INTO pages(id,description) VALUES (1,"Hello World from the DB!") ON DUPLICATE KEY UPDATE'
     global db_connection
 
     try:
@@ -44,7 +44,7 @@ def init_db():
                                             host=db_hostname, database=db_database)
         cur = db_connection.cursor()
         cur.execute(init_tables)
-        cur.execute(add_page1)
+#        cur.execute(add_page1)
 
         db_connection.commit()
 
