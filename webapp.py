@@ -19,7 +19,8 @@ def get_content():
     try:
         cur = db_connection.cursor()
         cur.execute("SELECT * FROM pages WHERE id = 1")
-        return str(cur.fetchone())
+        (id_int, string) = cur.fetchone()
+        return string
     except:
         return "LOL!"
 
