@@ -37,6 +37,8 @@ def init_hostname():
 def init_db():
     init_tables = 'CREATE TABLE IF NOT EXISTS pages (id int(3) NOT NULL, description varchar(45), PRIMARY KEY(id))'
     add_page1 = 'INSERT INTO pages(id,description) VALUES (1,"Hello World from the DB!")'
+    global db_connection
+
     try:
         db_connection = mysql.connector.connect(user=db_user, password=db_password,
                                             host=db_hostname, database=db_database)
