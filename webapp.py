@@ -16,11 +16,12 @@ def hello():
 
 
 def get_content():
-# Implemement DB support later
-#    cur = db_connection.cursor()
-#    cur.execute("SELECT * FROM pages WHERE id = 1")
-#    return cur.fetchone()
-    return "LOL!"
+    try:
+        cur = db_connection.cursor()
+        cur.execute("SELECT * FROM pages WHERE id = 1")
+        return cur.fetchone()
+    except:
+        return "LOL!"
 
 def init_pw():
     global db_password
