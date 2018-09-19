@@ -16,11 +16,11 @@ def hello():
 
 
 def get_content():
-    # Implemement DB support later
-    cur = db_connection.cursor()
-    cur.execute("SELECT * FROM pages WHERE id = 1")
-    return cur.fetchone()
-
+# Implemement DB support later
+#    cur = db_connection.cursor()
+#    cur.execute("SELECT * FROM pages WHERE id = 1")
+#    return cur.fetchone()
+    return "LOL!"
 
 def init_pw():
     global db_password
@@ -55,6 +55,7 @@ def init_db():
             print("Database does not exist")
         else:
             print(err)
+        exit()
 
 
 if __name__ == "__main__":
