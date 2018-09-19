@@ -17,7 +17,7 @@ def hello():
 
 def get_content():
     # Implemement DB support later
-    cur = cnx.cursor()
+    cur = db_connection.cursor()
     cur.execute("SELECT * FROM pages WHERE id = 1")
     return cur.fetchone()
 
