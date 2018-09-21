@@ -27,7 +27,7 @@ def get_content():
 
 def init_pw():
     global db_password
-    db_password = os.environ['DB_PASSWORD']
+    db_password = os.popen(os.environ['DB_PASSWORD']).read().strip()
 
 
 def init_hostname():
