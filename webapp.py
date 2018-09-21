@@ -32,7 +32,7 @@ def init_pw():
 
 def init_hostname():
     global db_hostname
-    db_hostname = os.environ['DB_HOSTNAME']
+    db_hostname = os.popen(os.environ['DB_HOSTNAME']).read().strip()
 
 
 def init_db():
